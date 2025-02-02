@@ -1,0 +1,401 @@
+body {
+  font-size: 1rem;
+  background-color: black;
+}
+nav,
+register,
+nav * {
+  display: flex; /* Enables Flexbox */
+  justify-content: space-between; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  gap: 10px;
+  text-align: center;
+}
+
+.svg1 {
+  border-radius: 50%;
+  padding: 8px;
+  /* border: 1px solid white; */
+  background-color: #1f1f1f;
+}
+
+.middle,
+.middle svg {
+  border-radius: 20px 20px 20px 20px; /* Only round the right side */
+  padding: 4px;
+  color: white; /* Text color */
+  outline: none; /* Remove default outline */
+  font-weight: 700;
+  background-color: #1f1f1f;
+  outline: none;
+}
+
+.middle input {
+  width: 20vw;
+  height: 30px;
+  background-color: #1f1f1f;
+  border: 1px solid #1f1f1f;
+}
+.register button {
+  border-radius: 20px 20px 20px 20px; /* Only round the right side */
+  padding: 4px;
+  font-weight: 700;
+  background-color: #1f1f1f;
+  border: 2px solid #1f1f1f;
+  height: 30px;
+  font-size: 15px;
+  padding: 20px;
+}
+.register button:first-child {
+  color: #b3b3b3;
+}
+.register button:first-child > p:hover {
+  color: white;
+  transform: scale(1.1);
+}
+.register button:nth-child(2) {
+  background-color: white;
+  color: #b3b3b3;
+}
+.register button:nth-child(2) > p:hover {
+  color: #1f1f1f;
+  transform: scale(1.1);
+}
+
+.content {
+  margin-top: 9px;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.content .left {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+}
+.right {
+  background-color: #1f1f1f;
+  padding: 15px;
+  position: relative;
+  width: 50em;
+  display: flex;
+  justify-content: center;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 4px;
+  /* position: relative; */
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head * {
+  margin: 0px;
+  padding: 15px;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  gap: 20px; /* Adjust spacing between items */
+  padding: 10px;
+  max-width: 100%; /* Prevent container overflow */
+  margin: 0 auto; /* Center the container horizontally */
+  justify-content: center; /* Center items inside container */
+  align-items: flex-start; /* Align items to the top */
+  align-content: flex-start; /* Align wrapped rows to the top */
+  overflow-x: hidden; /* Prevent unnecessary scrolling */
+  box-sizing: border-box;
+  height:25em ;
+}
+
+/* Ensure individual items have proper width */
+.images > * {
+  width: calc(33.33% - 20px); /* Adjust for 3 items per row */
+  min-width: 200px; /* Prevent items from getting too small */
+}
+
+/*
+/* SCROLL BAR */
+.images::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+/* The scrollbar track (background) */
+.images::-webkit-scrollbar-track {
+  background: #333; /* Dark background */
+  border-radius: 5px;
+}
+
+/* The scrollbar thumb (scroll handle) */
+.images::-webkit-scrollbar-thumb {
+  background: #70c172; /* Green scrollbar */
+  border-radius: 5px; /* Rounded scrollbar */
+}
+
+/* The scrollbar thumb on hover */
+.images::-webkit-scrollbar-thumb:hover {
+  background: #3e8e41; /* Darker green when hovered */
+} 
+
+
+.card {
+  width: 180px;
+  text-align: center;
+  position: relative;
+  gap: 10px;
+  background-color: #383434;
+  padding: 0px 10px 16px 10px;
+}
+
+.card img {
+  border-radius: 50%;
+  width: 150px;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.card h4,p {
+  text-align: left;
+  margin: 0px;
+}
+.artist {
+  margin-left: 15px;
+  gap: 3px;
+}
+.card:hover {
+  background-color: #2e3f3d;
+  .circle {
+    opacity: 1;
+    top: 50%;
+  }
+}
+.circle {
+  width: 45px; /* Circle diameter */
+  height: 45px;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.lib {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  border: none;
+  border-radius: none;
+  background-color: #1f1f1f;
+}
+
+.lib .svg {
+  margin-right: 12px;
+}
+
+.lib p {
+  color: #b3b3b3;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.library {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 12px 16px;
+}
+
+.playbar {
+  margin: auto;
+  width: 48em;
+  height: 4em;
+  padding: 10px 15px;
+  z-index: 100;
+  background-color: #e741a2;
+  display: flex;
+  justify-content: center;
+}
+
+.seekbar {
+  width: inherit;
+  height: 4px;
+  background-color: #710a3f;
+  border-radius: 5px;
+  cursor: pointer;
+  position:absolute;
+  bottom: 2.5em;
+  right: 2.5em;
+  cursor: pointer;
+}
+.seekbar .round {
+  width: 13px;
+  height: 13px;
+  background-color: #710a3f;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.playbuttons {
+  height: 40px;
+  gap: 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 41%;
+}
+
+.songsList {
+  max-height: 75vh;
+  overflow-y: auto;
+  margin: 10px;
+}
+
+.songsList ul {
+  padding: 0px 15px;
+}
+
+.songsList ul li {
+  background-color: #1f1f1f;
+  color: #b3b3b3;
+  list-style-type: decimal;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 12px 0px;
+  padding: 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+}
+.songLink {
+  display: none;
+}
+.songInfo {
+  flex-grow: 3;
+}
+
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* SCROLL BAR */
+.songsList::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+/* The scrollbar track (background) */
+.songsList::-webkit-scrollbar-track {
+  background: #333; /* Dark background */
+  border-radius: 5px;
+}
+
+/* The scrollbar thumb (scroll handle) */
+.songsList::-webkit-scrollbar-thumb {
+  background: #70c172; /* Green scrollbar */
+  border-radius: 5px; /* Rounded scrollbar */
+}
+
+/* The scrollbar thumb on hover */
+.songsList::-webkit-scrollbar-thumb:hover {
+  background: #3e8e41; /* Darker green when hovered */
+}
+
+
+.songDetails{
+  display: flex;
+  width: 100em;
+  height: 1em;
+  gap: 1em;
+  margin: 1em;
+}
+
+.songtime{
+  flex-grow: 1;
+}
+
+.volume{
+  display: flex;
+  align-items: center;
+}
+.vol{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.range {
+  /* display: none; */
+  transition: opacity 0.5s ease, visibility 0.3s ease; /* Smooth transition */
+  color: #e741a2;
+}
+
+.volume:hover .range {
+  display: contents;
+  padding-top: 2em;
+  transition: opacity 0.5s ease, visibility 0.3s ease; /* Smooth transition */
+
+}
+
+
+/* Media queries */
+/* For larger screens (up to 1230px) */
+
+@media (max-width:480px) {
+  nav{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    padding: 1em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.8));
+    width: -webkit-fill-available;
+    justify-content: flex-start;
+  }
+  .middle input{
+    display: none;
+  }
+ 
+  .register{
+    display: none;
+  }
+
+  .home,nav{
+    gap: 3em;
+  }
+
+  .library{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1em 2.69em;
+    background-color: transparent;
+  }
+  .lib .svg{
+    margin: 0;
+    width: 3em;
+  }
+ .lib{
+  background-color: transparent;
+ }
+ .lib svg{
+  fill: white;
+ }
+  .library p,.library span:nth-child(2){
+    display: none;
+  }
+  .left{
+    display: none;
+  }
+}
